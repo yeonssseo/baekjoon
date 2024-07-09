@@ -17,7 +17,7 @@ int main() {
 				if (i != j && j != k && i != k) {
 					sum = arr[i] + arr[j] + arr[k];
 				}
-				if (sum <= m &&sum > maxNum) {
+				if (sum <= m && sum > maxNum) {
 					maxNum = sum;
 				}
 			}
