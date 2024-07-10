@@ -16,7 +16,7 @@ int main() {
 	}
 	cin >> t >> p;
 
-	for (int i = 0; i < sizeof arr / 4; i++) {
+	for (int i = 0; i < sizeof(arr) / 4; i++) {
 		int shirt = 0;
 		shirt = arr[i] / t;
 		if (arr[i] % t == 0) {
