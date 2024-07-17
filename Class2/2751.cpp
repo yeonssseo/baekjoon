@@ -10,14 +10,17 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int cnt = 0, n = 0;
+    int cnt = 0;
     cin >> cnt;
     vector <int> v(cnt);
 
     for (int i = 0; i < cnt; i++) {
-        cin >> n;
-        v.push_back(n);
+        cin >> v[i];
     }
 
-    sort(v.rbegin(), v.rend());
+    sort(v.begin(), v.end());
+
+    for (int i = 0; i < cnt; i++) {
+        cout << v[i] << "\n";
+    }
 }
