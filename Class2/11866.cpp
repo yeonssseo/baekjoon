@@ -24,7 +24,7 @@ int main()
     }
 
     cout << "<";
-    while (que.empty() == true) {
+    while (que.empty() == false) {
         for (int i = 0; i < k; i++){
             cout << que.front() << ", ";
             que.pop();
