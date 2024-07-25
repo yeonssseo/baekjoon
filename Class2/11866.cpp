@@ -19,11 +19,11 @@ int main()
     int n = 0, k = 0;
     cin >> n >> k;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 1; i <= n; i++) {
         que.push(i);
     }
 
-    cout << que.front() << "\n" << que.back();
+    cout << que.front() << " " << que.back() << endl;
 
     return 0;
 }
