@@ -24,12 +24,18 @@ int main()
     }
 
     cout << "<";
-    while (que.empty() == false) {
+    while (!que.empty()) {
         for (int i = 0; i < k; i++){
-            cout << que.front() << ", ";
+            que.push(que.front());
             que.pop();
         }
+        cout << que.front();
+        que.pop();
+        if (!que.empty()) {
+            cout << ", ";
+        }
     }
+    cout << ">";
 
     return 0;
 }
