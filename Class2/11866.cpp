@@ -23,7 +23,13 @@ int main()
         que.push(i);
     }
 
-    cout << que.front() << " " << que.back() << endl;
+    cout << "<";
+    while (que.empty() == true) {
+        for (int i = 0; i < k; i++){
+            cout << que.front() << ", ";
+            que.pop();
+        }
+    }
 
     return 0;
 }
