@@ -32,8 +32,8 @@ int main()
         for (int j = 0; j < n; j++) {
             if (ch[i] == v[j]) {
                 cout << 1 << endl;
+                num = 1;
                 break;
-                num++;
             }
         }
         if (num == 0) cout << 0 << endl;
