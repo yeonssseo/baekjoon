@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 #define endl '\n'
 using namespace std;
 
@@ -14,30 +15,24 @@ int main()
 {
     Init();
 
-    int n = 0, m = 0;
+    int n, m;
+    long long listNum, findNum;
+
     cin >> n;
-    vector <int> v(n);
-    for (int i = 0; i < n; i++){
-        cin >> v[i];
+    vector<int> listv;
+    for (int i = 0; i < n; i++) {
+        cin >> listNum;
+        listv.push_back(listNum);
     }
+
+    sort(listv.begin(), listv.end());
 
     cin >> m;
-    vector <int> ch(m);
     for (int i = 0; i < m; i++){
-        cin >> ch[i];
-    }
+        cin >> findNum;
 
-    for (int i = 0; i < m; i++) {
-        int num = 0;
-        for (int j = 0; j < n; j++) {
-            if (ch[i] == v[j]) {
-                cout << 1 << endl;
-                num = 1;
-                break;
-            }
-        }
-        if (num == 0) cout << 0 << endl;
+        bool isFound = binary_search(listv.begin(), listv.end(), findNum);
+        cout << isFound << endl;
     }
-
-    return 0;   
+    return 0;
 }
