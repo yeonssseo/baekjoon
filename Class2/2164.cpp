@@ -17,6 +17,11 @@ int main()
     int n = 0;
     cin >> n;
 
+    if (n == 1) {
+        cout << 1;
+        return 0;
+    }
+
     queue <int> que;
     for (int i = 1; i <= n; i++){
         que.push(i);
@@ -25,14 +30,13 @@ int main()
     while(true) {
         int sec = 0;
         que.pop();
-        sec = que.front();
-        que.pop();
-        que.push(sec);
-
-        if (que.size() == 1) {
+         if (que.size() == 1) {
             cout << que.front();
             break;
         }
+        sec = que.front();
+        que.pop();
+        que.push(sec);
     }
 
     return 0;
