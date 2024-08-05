@@ -31,6 +31,7 @@ int main()
     int sum = 0;
     for (int i = 0; i < st.size(); i++) {
         sum += st.top();
+        cout << st.top();
         st.pop();
     }
 
