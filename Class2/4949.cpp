@@ -19,32 +19,33 @@ int main()
 {
     Init();
 
-    vector <char> ch;
+    string line;
 
-    char input;
-        while(cin >> input && input != '.'){
-        if (input == '(' || input == ')' || input == '[' || input ==']'){
-            ch.push_back(input);
+    while(getline(cin, line)){
+        if(line == ".") break;
+
+        vector <char> ch;
+
+        for(int i = 0; i < line.size(); i++){
+            char input = line[i];
+            if (input == '(' || input == ')' || input == '[' || input ==']'){
+                ch.push_back(input);
+            }
         }
-    }
 
-    int si1 = 0, si2 = 0, si3 = 0, si4 = 0;
-    for(int i = 0; i < ch.size(); i++){
-        if(findSign(ch, '('))si1++;
-        if(findSign(ch, ')'))si2++;
-        if(findSign(ch, '['))si3++;
-        if(findSign(ch, ']'))si4++;
-    }
+        int si1 = 0, si2 = 0, si3 = 0, si4 = 0;
+        for(int i = 0; i < ch.size(); i++){
+            if(findSign(ch, '('))si1++;
+            if(findSign(ch, ')'))si2++;
+            if(findSign(ch, '['))si3++;
+            if(findSign(ch, ']'))si4++;
+        }
 
-    if(si1 == si2 && si3 == si4) {
-        cout << "yes" << endl;
-    }
-    else cout << "no" << endl;
-
-    for (int i = 0; i < ch.size(); i++) {
-        cout << ch[i];
-    }
-
+        if(si1 == si2 && si3 == si4) {
+            cout << "yes" << endl;
+        }
+        else cout << "no" << endl;
+        }
 
     return 0;
 }
