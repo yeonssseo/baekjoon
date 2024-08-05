@@ -27,7 +27,6 @@ int main()
             st.push(a);
         }
     }
-    cout << st.size();
 
     int sum = 0;
     while(!st.empty()) {
