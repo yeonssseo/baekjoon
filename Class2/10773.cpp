@@ -30,7 +30,7 @@ int main()
     cout << st.size();
 
     int sum = 0;
-    for (int i = 0; i < st.size(); i++) {
+    while(!st.empty()) {
         sum += st.top();
         st.pop();
     }
