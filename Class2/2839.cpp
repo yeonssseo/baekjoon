@@ -27,7 +27,7 @@ int main()
     while(n >= 0) {
         if (n % 5 == 0) {
             cout << cnt + (n / 5);
-            return = 0;
+            return 0;
         }
         n = n - 3;
         cnt++;
