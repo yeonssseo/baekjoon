@@ -45,7 +45,7 @@ int main()
                     result = false;
                     break;
                 }
-            }
+            } // 어차피 짝대로 되어있으니 예를 들어 ] 입력받을시 top에는 [가 있게 됨 모르겠으면 그려봐~
         }
         if(st.empty() && result) {
             cout << "yes" << endl;
