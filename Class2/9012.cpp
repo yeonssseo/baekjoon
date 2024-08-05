@@ -17,11 +17,10 @@ int main()
 
     int n = 0;
     cin >> n;
-    cin.ignore();
 
     while(n--){
         string line;
-        getline(cin,line);
+        cin >> line;
 
         stack <char> st;
 
@@ -37,7 +36,7 @@ int main()
             }
         } 
 
-        if (st.empty() == true) {
+        if (st.empty()) {
             cout << "yes" << endl;
         } else {
             cout << "no" << endl;
