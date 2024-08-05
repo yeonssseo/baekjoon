@@ -37,9 +37,9 @@ int main()
         } 
 
         if (st.empty()) {
-            cout << "yes" << endl;
+            cout << "YES" << endl;
         } else {
-            cout << "no" << endl;
+            cout << "NO" << endl;
         }
     }
 
