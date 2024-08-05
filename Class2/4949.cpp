@@ -18,7 +18,9 @@ int main()
 
     char input;
     while(cin >> input && input != '.'){
-        ch.push_back(input);
+        if (input == '(' || input == ')' || input == '[' || input ==']'){
+            ch.push_back(input);
+        }
     }
 
     for (int i = 0; i < ch.size(); i++) {
