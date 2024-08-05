@@ -21,25 +21,23 @@ int main()
 
     while(n--){
         string line = "";
-        getline(cin,line);
-        bool result = true;
+        cin >> line;
 
         stack <char> st;
 
         for(int i = 0; i < line.length(); i++) {
-            if (line[i] == '(') {
-                st.push(i);
-            } else if (line[i] == ')'){
-                if(st.empty() != true && st.top() == '('){
+            if (st.empty()) {
+                st.push(line[i]);
+            } else {
+                if(line[i] == ')' && st.top() == '('){
                     st.pop();
                 } else {
-                    result = false;
-                    break;
+                    st.push(line[i]);
                 }
             }
         } 
 
-        if (st.empty() == true && result) {
+        if (st.empty() == true) {
             cout << "yes" << endl;
         } else {
             cout << "no" << endl;
