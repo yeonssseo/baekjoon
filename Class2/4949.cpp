@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
+#include <stack>
+#include <string>
 #define endl '\n'
 using namespace std;
 
@@ -11,41 +11,48 @@ void Init()
     cout.tie(NULL);
 }
 
-bool findSign(const vector <char> &vec, char a){
-    return find(vec.begin(), vec.end(), a) != vec.end();
-}
-
 int main()
 {
     Init();
 
-    string line;
+    while(true){
+        string input = "";
+        stack<char> st;
 
-    while(getline(cin, line)){
-        if(line == ".") break;
+        getline(cin, input); // 한문장 입력받기
+        bool result = true;
 
-        vector <char> ch;
+        if(input.length() == 1 && input[0] == '.') {
+            break;  // .인 경우 종료
+        }
 
-        for(int i = 0; i < line.size(); i++){
-            char input = line[i];
-            if (input == '(' || input == ')' || input == '[' || input ==']'){
-                ch.push_back(input);
+        for(int i = 0; i < input.length(); i++){
+            if(input[i] == '[' || input[i] == '(') {
+                st.push(input[i]);
+            }
+
+            if(input[i] == ']') {
+                if(!st.empty() && st.top() == '['){
+                    st.pop();
+                } else {
+                    result = false;
+                    break;
+                }
+            } else if (input[i] == ')'){
+                if(!st.empty() && st.top() == '('){
+                    st.pop();
+                } else {
+                    result = false;
+                    break;
+                }
             }
         }
-
-        int si1 = 0, si2 = 0, si3 = 0, si4 = 0;
-        for(int i = 0; i < ch.size(); i++){
-            if(findSign(ch, '('))si1++;
-            if(findSign(ch, ')'))si2++;
-            if(findSign(ch, '['))si3++;
-            if(findSign(ch, ']'))si4++;
-        }
-
-        if(si1 == si2 && si3 == si4) {
+        if(st.empty() && result) {
             cout << "yes" << endl;
+        } else {
+            cout << "no" << endl;
         }
-        else cout << "no" << endl;
-        }
+    }
 
     return 0;
 }
