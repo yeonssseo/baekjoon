@@ -12,7 +12,7 @@ void Init()
 }
 
 bool findSign(const vector <char> &vec, char a){
-    find(vec.begin(), vec.end(), a) != vec.end();
+    return find(vec.begin(), vec.end(), a) != vec.end();
 }
 
 int main()
