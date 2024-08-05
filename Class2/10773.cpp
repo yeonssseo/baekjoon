@@ -27,11 +27,11 @@ int main()
             st.push(a);
         }
     }
+    cout << st.size();
 
     int sum = 0;
     for (int i = 0; i < st.size(); i++) {
         sum += st.top();
-        cout << st.top();
         st.pop();
     }
 
