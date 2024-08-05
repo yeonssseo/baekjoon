@@ -22,7 +22,7 @@ int main()
     else if (n == 4) {
         cout << -1;
     }
-    
+    else {
     int cnt = 0;
     while(true) {
         if (n % 5 == 0) {
@@ -31,6 +31,7 @@ int main()
         }
         n = n - 3;
         cnt++;
+    }
     }
 
     return 0;
