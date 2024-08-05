@@ -17,6 +17,7 @@ int main()
 
     int n = 0;
     cin >> n;
+    cin.ignore();
 
     while(n--){
         string line = "";
