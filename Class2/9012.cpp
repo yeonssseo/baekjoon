@@ -18,7 +18,7 @@ int main()
     int n = 0;
     cin >> n;
 
-    for(int j = 0; j < n; j++){
+    while(n--){
         string line = "";
         getline(cin,line);
         bool result = true;
@@ -28,9 +28,7 @@ int main()
         for(int i = 0; i < line.length(); i++) {
             if (line[i] == '(') {
                 st.push(i);
-            }
-
-            if (line[i] == ')'){
+            } else if (line[i] == ')'){
                 if(st.empty() != true && st.top() == '('){
                     st.pop();
                 } else {
