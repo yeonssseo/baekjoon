@@ -18,9 +18,7 @@ int main()
 
     char input;
     while(cin >> input && input != '.'){
-        char a;
-        cin >> a;
-        ch.push_back(a);
+        ch.push_back(input);
     }
 
     for (int i = 0; i < ch.size(); i++) {
