@@ -20,8 +20,8 @@ int main()
     cin.ignore();
 
     while(n--){
-        string line = "";
-        cin >> line;
+        string line;
+        getline(cin,line);
 
         stack <char> st;
 
