@@ -23,8 +23,8 @@ int main()
         cout << -1;
     }
     
+    int cnt = 0;
     while(true) {
-        int cnt = 0;
         if (n % 5 == 0) {
             cout << cnt + (n / 5);
             break;
