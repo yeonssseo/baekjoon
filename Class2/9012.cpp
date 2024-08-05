@@ -40,7 +40,7 @@ int main()
             }
         } 
 
-        if (st.empty() == true && result) {
+        if (st.empty() == true) {
             cout << "yes" << endl;
         } else {
             cout << "no" << endl;
