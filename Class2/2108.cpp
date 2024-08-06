@@ -60,8 +60,9 @@ int main()
         if(cnt[index] == max) {
             result = i;
 
-            if(flag) break;
-            
+            if (flag){
+                break;
+            }
             flag = true;
         }
     }
