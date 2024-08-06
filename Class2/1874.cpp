@@ -33,7 +33,7 @@ int main()
 
         if(s.top() == x) {
             s.pop();
-            result.push_back( '- ');
+            result.push_back( '-');
         }
         else {
             cout << "NO";
