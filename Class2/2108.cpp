@@ -16,59 +16,60 @@ int main()
 {
     Init();
 
-    int x;
-    cin >> x;
-    int arr[8001];
+    int n = 0;
+    cin >> n;
+    vector <int> v;
+    int sum = 0;
+    int index = 0;
+    int max = 0;
+    int cnt[8001] = {0, };
 
-    int sum = 0, index = 0, max = 0;
-    vector <int> list;
-    for(int i = 0; i < x; i++){
-        int num;
+    for(int i = 0; i < n; i++){
+        int num = 0;
         cin >> num;
+        v.push_back(num);
         sum += num;
 
-        if(num <= 0){
-            index = -num;
-        } else {
-            index = 4000 + num;
-        }
+        if(num <= 0) index = -num;
+        else index = 4000 + num;
 
-        arr[index]++;
+        cnt[index]++;
 
-        if (arr[index] > max){
-            max = arr[index];
-        }
-
-        list.push_back(num);
+        if(cnt[index] > max) max = cnt[index];
     }
+    sort(v.begin(), v.end());
 
-    float avg = sum / (float)x;
-    cout << round(avg) << endl;
+    int mean = round((float)sum / n);
+    if(mean == -0) mean == 0;
+    cout << mean << endl; //산술평균
 
-    sort(list.begin(), list.end());
-    cout << list[list.size()/2] << endl;
+    int mid = 0;
+    if(n ==1){
+        mid = v[0];
+    } else{    
+    mid = v[n / 2];
+    }
+    cout << mid << endl; // 중앙값
 
     bool flag = false;
     int result = 0;
     for(int i = -4000; i < 4001; i++){
-        if (i <= 0){
-            index = -i;
-        } else {
-            index = 4000 + i;
-        }
+        if (i <= 0) index = -1;
+        else index = 4000 + i;
 
-        if(arr[index] == max){
+        if(cnt[index] == max) {
             result = i;
 
-            if(flag){
+            if (flag){
                 break;
             }
             flag = true;
         }
     }
-    cout << result << endl;
 
-    cout << list[list.size() - 1] - list[0];
+    cout << result << endl; //최빈값
+
+    cout << v[v.size() - 1] - v[0] << endl; //범위
 
     return 0;
 }
