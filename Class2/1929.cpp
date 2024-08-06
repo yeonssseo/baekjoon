@@ -34,7 +34,7 @@ int main()
     }
 
     for (int i = m; i <= n; i++) {
-        if(arr[i] != 0) cout << arr[i];
+        if(arr[i] != 0) cout << arr[i] << endl;
     }
 
     return 0;
