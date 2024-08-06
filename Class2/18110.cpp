@@ -41,6 +41,11 @@ int main()
         sum += v[i];
     }
 
+    if(v.size() == 0) {
+        cout << 0;
+        return 0;
+    }
+
     cout << ceil(sum / (double)v.size());
     return 0;
 }
