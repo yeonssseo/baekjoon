@@ -32,6 +32,7 @@ int main()
 
         if(num <= 0) index = -num;
         else index = 4000 + num;
+
         cnt[index]++;
 
         if(cnt[index] > max) max = cnt[index];
@@ -52,7 +53,7 @@ int main()
 
     bool flag = false;
     int result = 0;
-    for(int i = 0; i < n; i++){
+    for(int i = -4000; i < 4001; i++){
         if (i <= 0) index = -1;
         else index = 4000 + i;
 
