@@ -27,7 +27,7 @@ int main()
 
     sort(v.begin(), v.end());
 
-    int min = ceil(n * 0.15);
+    int min = ceil((double)(n * 0.15));
 
     for (int i = 0; i < min; i++){
         v.erase(v.begin() + i);
@@ -46,6 +46,6 @@ int main()
         return 0;
     }
 
-    cout << ceil(sum / (double)v.size());
+    cout << ceil((double)(sum / v.size()));
     return 0;
 }
