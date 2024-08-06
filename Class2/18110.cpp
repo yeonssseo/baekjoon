@@ -27,12 +27,12 @@ int main()
 
     sort(v.begin(), v.end());
 
-    int min = ceil((n * 0.15) + 0.5);
+    int min = round(n * 0.15);
 
     v.erase(v.begin(), v.begin() + min);
     v.erase(v.end() - min, v.end());
 
-    int sum = 0;
+    double sum = 0;
     for (int i = 0; i < v.size(); i++){
         sum += v[i];
     }
@@ -40,7 +40,7 @@ int main()
     if(v.empty()) {
         cout << 0;
     } else {
-        cout << floor((sum / (double)v.size()) + 0.5);
+        cout << round(sum / (double)v.size());
     }
     return 0;
 }
