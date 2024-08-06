@@ -19,7 +19,7 @@ void push(int a){
 }
 
 int pop(){
-    if(empty()){
+    if(empty() == 1){
         return -1;
     }
     int t = 0;
@@ -40,12 +40,12 @@ int empty(){
 }
 
 int front(){
-    if(empty()) return -1;
+    if(empty() == 1) return -1;
     return arr[top];
 }
 
 int back(){
-    if(empty()) return -1;
+    if(empty() == 1) return -1;
     return arr[bottom];
 }
 
