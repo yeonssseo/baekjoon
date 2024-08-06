@@ -27,7 +27,7 @@ int main()
 
     sort(v.begin(), v.end());
 
-    int min = ceil(n * 0.15);
+    int min = ceil((n * 0.15) + 0.5);
 
     v.erase(v.begin(), v.begin() + min);
     v.erase(v.end() - min, v.end());
@@ -40,7 +40,7 @@ int main()
     if(v.empty()) {
         cout << 0;
     } else {
-        cout << ceil(sum / (double)v.size());
+        cout << floor((sum / (double)v.size()) + 0.5);
     }
     return 0;
 }
