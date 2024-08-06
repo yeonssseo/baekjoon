@@ -13,6 +13,10 @@ int arr[100001];
 int top = 0;
 int bottom = 0;
 
+bool isempty(){
+    return top == bottom;
+}
+
 void push(int a){
     arr[bottom] = a;
     bottom++;
@@ -30,10 +34,6 @@ int pop(){
 
 int size(){
     return bottom - top;
-}
-
-bool isempty(){
-    return top == bottom;
 }
 
 int front(){
@@ -72,7 +72,7 @@ int main()
             cout << size() << endl;
         }
         if(str == "empty"){
-            cout << empty() << endl;
+            cout << isempty() << endl;
         }
         if (str == "pop"){
             cout << pop() << endl;
