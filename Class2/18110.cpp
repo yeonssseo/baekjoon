@@ -27,25 +27,20 @@ int main()
 
     sort(v.begin(), v.end());
 
-    int min = ceil((double)(n * 0.15));
+    int min = ceil(n * 0.15);
 
-    for (int i = 0; i < min; i++){
-        v.erase(v.begin() + i);
-    }
+    v.erase(v.begin(), v.begin() + min);
+    v.erase(v.end() - min, v.end());
 
-    for(int i = min; i > 0; i--){
-        v.erase(v.end() - i);
-    }
     int sum = 0;
     for (int i = 0; i < v.size(); i++){
         sum += v[i];
     }
 
-    if(v.size() == 0) {
+    if(v.empty()) {
         cout << 0;
-        return 0;
+    } else {
+        cout << ceil(sum / (double)v.size());
     }
-
-    cout << ceil((double)(sum / v.size()));
     return 0;
 }
