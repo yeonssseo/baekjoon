@@ -20,9 +20,9 @@ void push(int a){
 int pop(){
     if(s == 0) return -1;
     else {
-        int t = arr[s - 1];
+        int eli = arr[s - 1];
         s--;
-        return t;
+        return eli;
     }
 }
 
