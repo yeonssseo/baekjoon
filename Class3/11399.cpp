@@ -33,7 +33,7 @@ int main()
         fin_sum += tem_sum;
     }
 
-    cout << tem_sum;
+    cout << fin_sum;
 
     return 0;
 }
