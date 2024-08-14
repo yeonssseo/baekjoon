@@ -50,7 +50,7 @@ int main()
 
     dfs(1);
 
-    cout << dfs_count - 1 << endl;
+    cout << dfs_count - 1;
 
     return 0;
 }

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <algorithm>
+#include <map>
 #define endl '\n'
 using namespace std;
 
@@ -14,34 +14,23 @@ int main()
 {
     Init();
 
-    int n = 0;
-    cin >> n;
+    int n = 0, m = 0;
+    cin >> n >> m;
+    map<string,string> map;
+    string address, pw;
 
-    int dp[1000001];
+    for (int i = 0; i < n; i++){
+        cin >> address >> pw;
 
-    dp[0] = 0;
-    dp[1] = 0;
-    dp[2] = 1;
-    dp[3] = 1;
-
-    for (int i = 4; i <= n; i++) {
-        if (i % 3 == 0 && i % 2 == 0) {
-            dp[i] = min(dp[i - 1], (min(dp[i / 3], dp[i / 2])));
-        }
-        else if (i % 3 == 0) {
-            dp[i] = min(dp[i - 1], dp[i / 3]);
-        }
-        else if(i % 2 == 0){
-            dp[i] = min(dp[i - 1], dp[i / 2]);
-        }
-        else{
-            dp[i] = dp[i - 1];
-        }
-
-        dp[i]++;
+        map[address] = pw;
     }
 
-    cout << dp[n];
+    for(int i = 0; i < m; i++){
+        cin >> address;
+
+        cout << map[address] <<  endl;
+    }
+
 
     return 0;
 }
