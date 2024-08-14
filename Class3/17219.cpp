@@ -16,21 +16,20 @@ int main()
 
     int n = 0, m = 0;
     cin >> n >> m;
-    map<string,string> map;
+    map<string,string> admap;
     string address, pw;
 
     for (int i = 0; i < n; i++){
         cin >> address >> pw;
 
-        map[address] = pw;
+        admap[address] = pw;
     }
 
     for(int i = 0; i < m; i++){
         cin >> address;
 
-        cout << map[address] <<  endl;
+        cout << admap[address] <<  endl;
     }
-
 
     return 0;
 }
