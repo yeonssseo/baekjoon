@@ -19,7 +19,7 @@ int main()
     int zero[41];
     int one[41];
 
-    zero[0] = 0;
+    zero[0] = 1;
     zero[1] = 0;
     one[0] = 0;
     one[1] = 1;
