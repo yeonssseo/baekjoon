@@ -20,7 +20,7 @@ int main()
     int dp[1000001];
 
     dp[0] = 0;
-    dp[1] = 1;
+    dp[1] = 0;
     dp[2] = 1;
     dp[3] = 1;
 
@@ -41,7 +41,7 @@ int main()
         dp[i]++;
     }
 
-    cout << dp[n] << endl;
+    cout << dp[n];
 
     return 0;
 }
