@@ -9,9 +9,12 @@ vector <int> graph[101];
 bool dfs_visit[1001];
 vector<int> dfs_ans;
 
+int dfs_count = 0;
+
 void dfs(int start)
 {
     dfs_visit[start] = true;
+    dfs_count++;
     dfs_ans.push_back(start);
 
     for(int i = 0; i < graph[start].size(); i++) {
@@ -46,6 +49,8 @@ int main()
     }
 
     dfs(1);
+
+    cout << dfs_count - 1 << endl;
 
     return 0;
 }
